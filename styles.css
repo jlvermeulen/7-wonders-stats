@@ -1,0 +1,12 @@
+table {
+    text-align: center;
+}
+
+th {
+    padding-right: 10px;
+}
+
+td {
+    padding-right: 10px;
+    min-width: 75px;
+}
