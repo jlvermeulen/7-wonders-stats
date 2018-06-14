@@ -70,13 +70,13 @@
                             <option value="Unknown">Unknown</option>
                             <option value="Alexandria">Alexandria</option>
                             <option value="Babylon">Babylon</option>
-                            <option value="Colossus">Colossus</option>
                             <option value="Ephesos">Ephesos</option>
                             <option value="Gizah">Gizah</option>
-                            <option value="Halikarnāssós">Halikarnāssós</option>
                             <option value="The Great Wall">The Great Wall</option>
+                            <option value="Halikarnāssós">Halikarnāssós</option>
                             <option value="Manneken Pis">Manneken Pis</option>
-                            <option value="Olympia">Olympia</option>
+                            <option value="Olympía">Olympía</option>
+                            <option value="Rhódos">Rhódos</option>
                             <option value="Stonehenge">Stonehenge</option>
                         </select>
                     </td>

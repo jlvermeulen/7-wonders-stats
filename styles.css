@@ -2,6 +2,10 @@ table {
     text-align: center;
 }
 
+table.dataTable {
+    margin: 0;
+}
+
 th {
     padding-right: 10px;
 }

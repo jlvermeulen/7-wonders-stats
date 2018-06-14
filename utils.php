@@ -139,6 +139,9 @@
         <meta content="text/html; charset=utf-8" http-equiv="content-type">
         <title>7 Wonders Statistics</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="libs/datatables.min.css"/>
+        <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="libs/datatables.min.js"></script>
     </head>
     <body>
 <?php
