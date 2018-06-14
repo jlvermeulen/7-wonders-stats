@@ -1,18 +1,8 @@
 <?php
     include 'utils.php';
     make_header();
-
+    initialise_tables();
 ?>
-        <script>
-            $(document).ready(function() {
-                $('table.display').DataTable({
-                    paging: false,
-                    searching: false,
-                    info: false
-                });
-            });
-        </script>
-
         <h2>Player overview</h2>
         <table class="display compact">
             <thead><tr><th style="width:100px">Player</th><th>Games played</th><th>Victories</th><th>Win ratio</th><th>Average score</th><th>Most played wonder</th></tr></thead>

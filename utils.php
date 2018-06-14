@@ -175,19 +175,42 @@
     function make_view_header() {
         global $score_fields;
 ?>
-            <tr>
-                <th>Player</th>
-                <th>Wonder</th>
-                <th>Side</th>
-                <?php
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Wonder</th>
+                    <th>Side</th>
+<?php
         foreach ($score_fields as $sf) {
 ?>
-                <th><?= ucfirst($sf) ?></th>
+                    <th><?= ucfirst($sf) ?></th>
 <?php
         }
 ?>
-                <th>Total</th>
-            </tr>
+                    <th>Total</th>
+                </tr>
+            </thead>
+<?php
+    }
+
+    function initialise_tables($start_sorted = true) {
+?>
+        <script>
+            $(document).ready(function() {
+                $('table.display').DataTable({
+<?php
+        if (!$start_sorted) {
+?>
+                    order: [],
+<?php
+        }
+?>
+                    paging: false,
+                    searching: false,
+                    info: false
+                });
+            });
+        </script>
 <?php
     }
 ?>
