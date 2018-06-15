@@ -17,8 +17,8 @@
         foreach ($query->fetchAll() as $row) {
 ?>
                 <tr>
-                    <td style="width:150px"><?= $row['playername'] ?></td>
-                    <td style="width:150px"><?= $row['wondername']?></td>
+                    <td><?= $row['playername'] ?></td>
+                    <td><?= $row['wondername']?></td>
                     <td><?= $row['wonderside']?></td>
 <?php
     foreach ($score_fields as $field) {
