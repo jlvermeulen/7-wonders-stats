@@ -126,6 +126,41 @@
         return $max[0];
     }
 
+    function all_wonder_names() {
+        return array(
+            "Alexandria",
+            "Babylon",
+            "Ephesos",
+            "Gizah",
+            "The Great Wall",
+            "Halikarnāssós",
+            "Manneken Pis",
+            "Olympía",
+            "Rhódos",
+            "Stonehenge"
+        );
+    }
+
+    function wonder_side_average_scores($wonder, $side) {
+        global $score_fields;
+        global $dbh;
+
+        $scores = array();
+        $rows = $dbh->query("SELECT * FROM games WHERE wondername = '$wonder' AND wonderside = '$side'")->fetchAll();
+
+        foreach ($score_fields as $component) {
+            $total = 0;
+            foreach ($rows as $row) {
+                $total += $row["$component"];
+            }
+            $scores["$component"] = $total / count($rows);
+        }
+        $scores['total'] = array_sum($scores);
+        $scores['count'] = count($rows);
+
+        return $scores;
+    }
+
     function fail($location = 'index.php') {
         header("Location: $location");
         exit();

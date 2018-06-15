@@ -68,16 +68,13 @@
                         <select name="<?= "value{$i}1" ?>" id="<?= "value{$i}1" ?>">
                             <option selected></option>
                             <option value="Unknown">Unknown</option>
-                            <option value="Alexandria">Alexandria</option>
-                            <option value="Babylon">Babylon</option>
-                            <option value="Ephesos">Ephesos</option>
-                            <option value="Gizah">Gizah</option>
-                            <option value="The Great Wall">The Great Wall</option>
-                            <option value="Halikarnāssós">Halikarnāssós</option>
-                            <option value="Manneken Pis">Manneken Pis</option>
-                            <option value="Olympía">Olympía</option>
-                            <option value="Rhódos">Rhódos</option>
-                            <option value="Stonehenge">Stonehenge</option>
+<?php
+        foreach (all_wonder_names() as $wonder) {
+?>
+                            <option value="<?= $wonder ?>"><?= $wonder ?></option>
+<?php
+        }
+?>
                         </select>
                     </td>
                     <td>

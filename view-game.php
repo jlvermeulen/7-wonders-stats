@@ -20,13 +20,13 @@
                     <td style="width:150px"><?= $row['playername'] ?></td>
                     <td style="width:150px"><?= $row['wondername']?></td>
                     <td><?= $row['wonderside']?></td>
-                    <td><?= $row['military']?></td>
-                    <td><?= $row['gold']?></td>
-                    <td><?= $row['wonder']?></td>
-                    <td><?= $row['culture']?></td>
-                    <td><?= $row['trade']?></td>
-                    <td><?= $row['guilds']?></td>
-                    <td><?= $row['science']?></td>
+<?php
+    foreach ($score_fields as $field) {
+?>
+                    <td><?= $row[$field] ?></td>
+<?php
+    }
+?>
                     <td><b><?= calculate_score($row) ?></b></td>
                 </tr>
 <?php

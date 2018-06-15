@@ -2,11 +2,12 @@ table {
     text-align: center;
 }
 
-th {
-    padding-right: 10px;
+
+td:first-of-type {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 td {
-    padding-right: 10px;
     min-width: 75px;
 }

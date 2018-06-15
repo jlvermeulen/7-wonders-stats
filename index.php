@@ -5,7 +5,7 @@
 ?>
         <h2>Player overview</h2>
         <table class="display compact">
-            <thead><tr><th style="width:100px">Player</th><th>Games played</th><th>Victories</th><th>Win ratio</th><th>Average score</th><th>Most played wonder</th></tr></thead>
+            <thead><tr><th>Player</th><th>Games played</th><th>Victories</th><th>Win ratio</th><th>Average score</th><th>Most played wonder</th></tr></thead>
             <tbody>
 <?php
     foreach (all_player_names() as $name) {
@@ -29,7 +29,7 @@
         <table class="display compact">
             <thead>
                 <tr>
-                    <th style="width:100px">Player</th>
+                    <th>Player</th>
                     <th>Total</th>
 <?php
     foreach ($score_fields as $field) {
@@ -56,6 +56,49 @@
 ?>
                 </tr>
 <?php
+    }
+?>
+            </tbody>
+        </table>
+
+        <h2>Averages by wonder</h2>
+        <table class="display compact">
+            <thead>
+                <tr>
+                    <th>Wonder</th>
+                    <th>Side</th>
+                    <th>Times played</th>
+                    <th>Total</th>
+<?php
+    foreach ($score_fields as $field) {
+?>
+                    <th><?= ucfirst($field) ?></th>
+<?php
+    }
+?>
+                </tr>
+            </thead>
+            <tbody>
+<?php
+    foreach (all_wonder_names() as $wonder) {
+        foreach (array('A', 'B') as $side) {
+            $scores = wonder_side_average_scores($wonder, $side);
+?>
+                <tr>
+                    <td><?= $wonder ?></td>
+                    <td><?= $side ?></td>
+                    <td><?= $scores['count'] ?></td>
+                    <td><?= round($scores['total'], 2) ?></td>
+<?php
+            foreach ($score_fields as $field) {
+?>
+                    <td><?= round($scores[$field], 2) ?></td>
+<?php
+            }
+?>
+                </tr>
+<?php
+        }
     }
 ?>
             </tbody>
